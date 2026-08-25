@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAGN LLC — General Services & Solutions | Government Contractor</title>
-<meta name="description" content="SAGN LLC is a woman-owned small business providing janitorial supplies, industrial equipment sourcing, and supply chain solutions to federal, state, and local government agencies in Florida.">
+<title>SAGN LLC — Government Procurement & Supply Chain Solutions</title>
+<meta name="description" content="SAGN LLC is an SBA-certified woman-owned small business (WOSB) and government supplier in Florida. CAGE 125K5 | UEI KMFNA8MUCQ69. Industrial equipment sourcing, janitorial and office supplies, and procurement support for federal, state, and local agencies.">
+<link rel="canonical" href="https://sagnllc1.github.io/">
 <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-<link rel="stylesheet" href="./styles.css?v=11">
+<link rel="stylesheet" href="./styles.css?v=33">
 </head>
 <body>
 <div id="root"></div>
@@ -18,11 +19,11 @@
 
 <script type="text/babel" src="./Icons.jsx?v=11"></script>
 <script type="text/babel" src="./Nav.jsx?v=11"></script>
-<script type="text/babel" src="./Hero.jsx?v=11"></script>
+<script type="text/babel" src="./Hero.jsx?v=18"></script>
 <script type="text/babel" src="./Section.jsx?v=11"></script>
 <script type="text/babel" src="./Cards.jsx?v=11"></script>
-<script type="text/babel" src="./Contact.jsx?v=11"></script>
-<script type="text/babel" src="./Footer.jsx?v=11"></script>
+<script type="text/babel" src="./Contact.jsx?v=29"></script>
+<script type="text/babel" src="./Footer.jsx?v=32"></script>
 
 <script type="text/babel">
 const { useState, useEffect } = React;
@@ -46,23 +47,21 @@ function App(){
   const toast = (msg) => { const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); };
 
   const services = [
-    { icon:<IconCog/>, title:"Industrial Equipment Sourcing & Procurement", body:"Procurement and delivery of industrial equipment, machinery, safety supplies, and facility maintenance materials through our vetted supplier network.", naics:"NAICS 423840" },
-    { icon:<IconTrash/>, title:"Cleaning Equipment & Janitorial Supply", body:"Sourcing and delivery of janitorial products, cleaning supplies, sanitation materials, and service establishment equipment for government facilities. Supply fulfillment only — no cleaning services performed.", naics:"NAICS 423850" },
-    { icon:<IconFile/>, title:"Office Supplies & Paper Products", body:"Procurement and delivery of office supplies, paper products, breakroom essentials, and general-use commodities. Fast turnaround on quotes with competitive government pricing.", naics:"NAICS 424120" },
-    { icon:<IconShield/>, title:"TAA & Berry Amendment Compliant Sourcing", body:"Strict TAA and Berry Amendment compliance verified on every quote, with country-of-origin documentation and audit-ready procurement records.", naics:"Cross-cutting" },
-    { icon:<IconTrend/>, title:"Vendor Sourcing & Quote Management", body:"Vendor identification, price comparison, and supply chain coordination. Fast, compliant RFQ responses with competitive pricing across all product lines.", naics:"Cross-cutting" },
-    { icon:<IconCheck/>, title:"Purchase Order Processing", body:"End-to-end purchase order processing and procurement documentation for federal, state, and local agencies — handled with full transparency and audit-ready records.", naics:"Cross-cutting" },
-    { icon:<IconStar/>, title:"Micro-Purchase & GPC Transactions", body:"Government purchase card and micro-purchase support, plus full PO processing for small and large orders alike. No transaction is too small.", naics:"Cross-cutting" },
-    { icon:<IconFlag/>, title:"Federal, State & Local Supply Fulfillment", body:"Supply fulfillment across all government tiers — from federal agencies on DLA DIBBS to Florida state and local procurement systems.", naics:"Cross-cutting" },
+    { icon:<IconCog/>, title:"Industrial Equipment Sourcing & Procurement Support", body:"Sourcing and delivery of industrial equipment, machinery, safety supplies, and facility maintenance materials through a reliable supplier network.", naics:"NAICS 423840" },
+    { icon:<IconTrash/>, title:"Cleaning Equipment & Janitorial Supplies", body:"Sourcing and delivery of janitorial products, cleaning supplies, sanitation materials, and service establishment equipment for government facilities. Supply fulfillment only; cleaning services are not performed.", naics:"NAICS 423850" },
+    { icon:<IconFile/>, title:"Office Supplies & Paper Products", body:"Sourcing and delivery of office supplies, paper products, breakroom essentials, and general-use business supplies, with fast turnaround on quotes and competitive government pricing.", naics:"NAICS 424120" },
+  ];
+  const process = [
+    { t:"Vendor sourcing & quotes", d:"Vendor identification, price comparison, and fast, compliant RFQ responses." },
+    { t:"TAA & Berry Amendment compliance", d:"Verified on every quote, with country-of-origin documentation." },
+    { t:"Purchase order processing", d:"End-to-end documentation with audit-ready records." },
+    { t:"Any order size", d:"GPC and micro-purchases through large multi-line orders." },
   ];
   const diffs = [
-    { num:"01", title:"Women-Owned Small Business", body:"Self-certified small business; SBA WOSB certification in progress. Positioned for woman-owned set-aside eligibility and supplier diversity goals once certified." },,
-    { num:"02", title:"SAM.gov Registered, CAGE Active", body:"Active SAM.gov registration with CAGE Code 125K5 — ready to perform immediately. No onboarding lag." },
-    { num:"03", title:"Owner-Operated Accountability", body:"Direct accountability on every order, every time. No staff rotation, no handoffs — you always know who is responsible." },
-    { num:"04", title:"Rapid Turnaround", body:"No layers of management slowing response time. Quotes returned quickly, POs processed without delay." },
-    { num:"05", title:"Strict Compliance Discipline", body:"TAA and Berry Amendment compliance verified across all product lines. Country-of-origin documentation on every order." },
-    { num:"06", title:"Local Florida Presence", body:"Miami-Dade County Local Business Tax receipt holder — April 2026. Committed to long-term agency relationships in South Florida." },
-    { num:"07", title:"Flexible Order Sizing", body:"Procurement support from micro-purchases through large multi-line orders. No transaction is too small or too complex." },
+    { num:"01", title:"Owner-Operated Accountability", body:"Direct accountability on every order, every time. With no staff rotation or handoffs, agencies always know who is responsible." },
+    { num:"02", title:"Rapid Turnaround", body:"With no layers of management slowing response time, SAGN LLC returns quotes quickly and processes purchase orders without delay." },
+    { num:"03", title:"Local Florida Presence", body:"SAGN LLC holds a Miami-Dade County Local Business Tax Receipt and is committed to building long-term agency relationships in South Florida." },
+    { num:"04", title:"Women-Owned Small Business", body:"SBA WOSB certified and positioned to support woman-owned set-aside eligibility and supplier diversity goals." },
   ];
 
   return (<>
@@ -71,61 +70,82 @@ function App(){
       onPrimary={() => { window.open(CAPSTAT_URL, "_blank"); toast("Opening Capability Statement…"); }}
       onSecondary={() => scrollTo("contact")} />
 
-    <Section id="about" label="About Us" title="Built to Serve. Ready to Deliver.">
-      <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:48, alignItems:"start"}} className="about-grid">
+    <Section id="about" label="About Us" title="Built to Serve Government Agencies. Ready to Deliver.">
+      <div style={{display:"grid", gridTemplateColumns:"1.05fr .95fr", gap:44, alignItems:"start"}} className="about-grid">
         <div>
-          <p style={{marginBottom:16, color:"var(--text-secondary)", lineHeight:1.75}}>SAGN LLC is a Miami-Dade based, woman-owned small business founded by Joanne Seepersad. We specialize in dependable general services and supply chain solutions for federal, state, and local government agencies.</p>
-          <p style={{marginBottom:16, color:"var(--text-secondary)", lineHeight:1.75}}>From supply sourcing to procurement fulfillment and vendor coordination, SAGN LLC offers the agility of a small business with the professionalism that government contracts demand. We are SAM.gov registered, listed on MyFloridaMarketPlace, and prepared to accept purchase orders through standard government procurement channels.</p>
-          <p style={{color:"var(--text-secondary)", lineHeight:1.75}}>We welcome teaming arrangements and mentor-protégé partnerships with established primes.</p>
+          <p style={{marginBottom:16, color:"var(--text-secondary)", lineHeight:1.75}}>SAGN LLC is a Miami-Dade-based small business founded by Joanne Seepersad. We deliver dependable general services and supply chain solutions for federal, state, and local government agencies.</p>
+          <p style={{marginBottom:16, color:"var(--text-secondary)", lineHeight:1.75}}>SAGN LLC supports agencies with supply sourcing, procurement fulfillment, and vendor coordination, delivering small-business agility with the professionalism government contracts require. We are ready to accept purchase orders through standard government procurement channels.</p>
+          <p style={{color:"var(--text-secondary)", lineHeight:1.75}}>We are open to teaming arrangements and mentor-protégé partnerships with established prime contractors.</p>
         </div>
-        <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:12}}>
-          {[
-            { i:<IconCheck/>, t:"SAM.gov Registered" },
-            { i:<IconStar/>,  t:"Woman-Owned Small Business", s:"SBA WOSB cert in progress" },
-            { i:<IconFlag/>,  t:"Florida Registered Vendor" },
-            { i:<IconShield/>,t:"Small Business" },
-            { i:<IconStar/>,  t:"Military Spouse-Owned", s:"Self-certified" },
-          ].map((b,i) => (
-            <div key={i} style={{display:"flex", alignItems:"center", gap:10, background:"var(--sky)", borderRadius:8, padding:"14px 16px", fontSize:".85rem", fontWeight:600, color:"var(--navy)"}}>
-              <div style={{width:36, height:36, borderRadius:"50%", background:"var(--blue)", color:"#fff", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0}}>{b.i}</div>
-              <div>{b.t}{b.s && <div style={{fontSize:".72rem", fontWeight:400, color:"var(--text-light)"}}>{b.s}</div>}</div>
+        <div>
+          <div style={{background:"#fff", border:"1px solid var(--border)", borderTop:"3px solid var(--gold-bright)", borderRadius:"var(--radius-lg)", padding:"22px 24px"}}>
+            <div style={{fontSize:".8rem", fontWeight:700, color:"var(--blue)", letterSpacing:".1em", textTransform:"uppercase", marginBottom:10}}>Delivered Work</div>
+            <div style={{fontFamily:"var(--font-display)", fontSize:"1.25rem", color:"var(--navy)", lineHeight:1.25, marginBottom:8}}>Electrical Equipment — HVAC Unit</div>
+            <div style={{fontSize:".94rem", color:"var(--text-secondary)", lineHeight:1.6, marginBottom:14}}>Competitively awarded by the City of Tampa and delivered in full compliance with solicitation requirements.</div>
+            <div style={{display:"flex", flexWrap:"wrap", gap:"6px 20px", fontSize:".88rem", color:"var(--text-secondary)"}}>
+              <span><strong style={{color:"var(--navy)"}}>City of Tampa, FL</strong></span>
+              <span>Project 26-P-00467</span>
+              <span>July 2026</span>
+            </div>
+          </div>
+          <div style={{display:"flex", alignItems:"center", gap:14, marginTop:18, paddingTop:16, borderTop:"1px solid var(--border)"}}>
+            <img src="./assets/sba-wosb-logo.png" alt="U.S. Small Business Administration certified Woman-Owned Small Business" style={{width:64, height:"auto", flexShrink:0}} />
+            <div style={{fontSize:".88rem", color:"var(--text-secondary)", lineHeight:1.5}}>Certified by the U.S. Small Business Administration as a <strong style={{color:"var(--navy)", fontWeight:600}}>Woman-Owned Small Business</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <Section sky id="services" label="Core Competencies" title="What We Do" desc="Focused service lines backed by hands-on experience and a reliable supplier network.">
+      <div className="services-grid">{services.map((s,i) => <ServiceCard key={i} {...s} />)}</div>
+      <div style={{marginTop:32, paddingTop:28, borderTop:"1px solid var(--border)"}}>
+        <div style={{fontSize:".8rem", fontWeight:700, color:"var(--blue)", letterSpacing:".1em", textTransform:"uppercase", marginBottom:16}}>How We Work</div>
+        <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(230px, 1fr))", gap:"18px 28px"}}>
+          {process.map((p,i) => (
+            <div key={i}>
+              <div style={{fontSize:".98rem", fontWeight:700, color:"var(--navy)", marginBottom:4}}>{p.t}</div>
+              <div style={{fontSize:".93rem", color:"var(--text-secondary)", lineHeight:1.55}}>{p.d}</div>
             </div>
           ))}
         </div>
       </div>
     </Section>
 
-    <Section sky id="services" label="Core Competencies" title="What We Do" desc="Focused service lines backed by hands-on experience and an established supplier network.">
-      <div className="services-grid">{services.map((s,i) => <ServiceCard key={i} {...s} />)}</div>
-    </Section>
-
-    <Section dark id="differentiators" label="Our Advantage" title="Why Partner with SAGN LLC" desc="The agility and accountability of an owner-operated firm, backed by established supplier relationships.">
+    <Section dark id="differentiators" label="Our Advantage" title="Why Partner with SAGN LLC" desc="SAGN LLC combines the agility and accountability of an owner-operated firm with established supplier relationships that support dependable procurement execution.">
       <div className="diff-grid">{diffs.map((d,i) => <DiffCard key={i} {...d} />)}</div>
     </Section>
 
-    <Section sky id="past-performance" label="Past Performance" title="A Track Record of Reliability" desc="Thirteen years of vendor management and high-volume transaction processing — the foundation behind SAGN LLC's procurement discipline.">
-      <div style={{display:"grid", gridTemplateColumns:"1fr 1.4fr", gap:32, alignItems:"start"}} className="about-grid">
-        <div style={{background:"#fff", border:"1px solid var(--border)", borderRadius:"var(--radius-lg)", padding:"28px"}}>
-          <div style={{fontSize:".75rem", fontWeight:700, color:"var(--blue)", letterSpacing:".1em", textTransform:"uppercase", marginBottom:8}}>1997 — 2010 · 13 Years</div>
-          <h3 style={{fontFamily:"var(--font-display)", fontSize:"1.4rem", color:"var(--navy)", marginBottom:6}}>Winn-Dixie Stores, Inc.</h3>
-          <div style={{fontSize:".95rem", color:"var(--text-secondary)", fontWeight:500, marginBottom:20}}>Assistant Front-End Manager</div>
-          <div style={{display:"flex", flexWrap:"wrap", gap:8}}>
-            <span className="naics-tag">Vendor Management</span>
-            <span className="naics-tag">Bookkeeping</span>
-            <span className="naics-tag">Inventory</span>
-            <span className="naics-tag">Compliance</span>
-          </div>
+    <Section sky id="past-performance" label="Past Performance" title="A Track Record of Reliability" desc="An awarded and fulfilled municipal contract, backed by thirteen years of vendor management experience.">
+      <div style={{background:"#fff", border:"1px solid var(--border)", borderLeft:"3px solid var(--accent-gold)", borderRadius:"var(--radius-lg)", padding:"28px", marginBottom:32}}>
+        <div style={{display:"flex", flexWrap:"wrap", gap:12, alignItems:"baseline", justifyContent:"space-between", marginBottom:6}}>
+          <div style={{fontSize:".8rem", fontWeight:700, color:"var(--blue)", letterSpacing:".1em", textTransform:"uppercase"}}>Awarded Contract · City of Tampa, FL</div>
+          <div style={{fontSize:".8rem", fontWeight:700, color:"var(--accent-gold)", letterSpacing:".08em", textTransform:"uppercase"}}>Fulfilled</div>
         </div>
-        <div style={{background:"#fff", border:"1px solid var(--border)", borderRadius:"var(--radius-lg)", padding:"28px"}}>
-          <h3 style={{fontSize:"1rem", fontWeight:700, color:"var(--navy)", marginBottom:16}}>Scope &amp; Responsibilities</h3>
-          <ul className="data-list" style={{display:"flex", flexDirection:"column", gap:4}}>
-            <li>Reconciled daily cash, vendor payments, and bookkeeping across a high-volume operation</li>
-            <li>Sourced and coordinated with product suppliers; tracked inventory and purchasing activity</li>
-            <li>Processed high-volume transactions across multiple departments with full accountability</li>
-            <li>Supervised front-end staff and enforced compliance with company policy and procedures</li>
-            <li>Sustained 13 years of reliability in financial management and vendor coordination</li>
-          </ul>
+        <h3 style={{fontFamily:"var(--font-display)", fontSize:"1.4rem", color:"var(--navy)", marginBottom:16}}>Electrical Equipment — HVAC Unit</h3>
+        <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(150px, 1fr))", gap:20, marginBottom:20}}>
+          <div><div style={{fontSize:".81rem", color:"var(--text-secondary)", textTransform:"uppercase", letterSpacing:".08em", marginBottom:3}}>Project ID</div><div style={{fontSize:"1rem", fontWeight:600, color:"var(--navy)"}}>26-P-00467</div></div>
+          <div><div style={{fontSize:".81rem", color:"var(--text-secondary)", textTransform:"uppercase", letterSpacing:".08em", marginBottom:3}}>Agency</div><div style={{fontSize:"1rem", fontWeight:600, color:"var(--navy)"}}>City of Tampa, FL</div></div>
+          <div><div style={{fontSize:".81rem", color:"var(--text-secondary)", textTransform:"uppercase", letterSpacing:".08em", marginBottom:3}}>Vehicle</div><div style={{fontSize:"1rem", fontWeight:600, color:"var(--navy)"}}>Request for Quotation</div></div>
+          <div><div style={{fontSize:".81rem", color:"var(--text-secondary)", textTransform:"uppercase", letterSpacing:".08em", marginBottom:3}}>Awarded</div><div style={{fontSize:"1rem", fontWeight:600, color:"var(--navy)"}}>July 2026</div></div>
         </div>
+        <p style={{fontSize:".99rem", color:"var(--text-secondary)", lineHeight:1.65, marginBottom:16}}>SAGN LLC was competitively awarded the contract by the City of Tampa Department of Solid Waste and Environmental Program Management as the lowest responsive bidder. The company sourced and delivered the specified HVAC unit in full compliance with the solicitation requirements.</p>        <div style={{display:"flex", flexWrap:"wrap", gap:8}}>
+          <span className="naics-tag">Competitive Award</span>
+          <span className="naics-tag">Equipment Sourcing</span>
+          <span className="naics-tag">Municipal Client</span>
+          <span className="naics-tag">Delivered Complete</span>
+        </div>
+      </div>
+      <div style={{fontSize:".8rem", fontWeight:700, color:"var(--blue)", letterSpacing:".1em", textTransform:"uppercase", marginBottom:16}}>Owner Experience</div>
+      <div style={{background:"#fff", border:"1px solid var(--border)", borderRadius:"var(--radius-lg)", padding:"28px"}}>
+        <div style={{display:"flex", flexWrap:"wrap", gap:"4px 12px", alignItems:"baseline", marginBottom:14}}>
+          <h3 style={{fontFamily:"var(--font-display)", fontSize:"1.25rem", color:"var(--navy)"}}>Winn-Dixie Stores, Inc.</h3>
+          <div style={{fontSize:".96rem", color:"var(--text-secondary)"}}>Assistant Front-End Manager · 1997–2010</div>
+        </div>
+        <ul className="data-list" style={{display:"flex", flexDirection:"column", gap:4}}>
+          <li>Reconciled daily cash, vendor payments, and bookkeeping across a high-volume operation</li>
+          <li>Sourced and coordinated with product suppliers; tracked inventory and purchasing activity</li>
+          <li>Supervised front-end staff and enforced compliance with company policy and procedures</li>
+        </ul>
       </div>
     </Section>
 
@@ -146,34 +166,24 @@ function App(){
         <DataCard title="Designations">
           <ul className="data-list">
             <li>Small Business (self-certified)</li>
-            <li>Woman-Owned Small Business (WOSB pending)</li>
+            <li>Florida Registered Vendor</li>
             <li>Military Spouse-Owned (self-certified)</li>
-            <li>Florida Registered LLC</li>
-            <li>Miami-Dade Local Business Tax receipt — April 2026</li>
           </ul>
-        </DataCard>
-        <DataCard title="Registered Platforms">
-          <ul className="data-list">
-            <li>SAM.gov</li><li>OpenGov</li><li>DLA</li>
-            <li>DemandStar</li><li>MyFloridaMarketPlace</li><li>Bonfire</li>
-          </ul>
-          <p style={{fontSize:".78rem", color:"var(--text-light)", marginTop:10, lineHeight:1.5, borderTop:"1px solid var(--border)", paddingTop:10}}>In progress: Miami-Dade County vendor registration &amp; Miami-Dade County Public Schools certification.</p>
         </DataCard>
         <DataCard title="How to Order">
-          <p style={{fontSize:".88rem", color:"var(--text-secondary)", lineHeight:1.65}}>Submit RFQs and purchase orders through any of our registered platforms, or via open-market procurement. Email us to request a quote.</p>
-          <p style={{fontSize:".82rem", color:"var(--navy)", fontWeight:600, lineHeight:1.55, marginTop:10}}>Quotes returned within 1–2 business days. GPC and micro-purchases welcome — no order too small.</p>
-          <a className="btn btn-primary" href={CAPSTAT_URL} target="_blank" rel="noopener" style={{marginTop:14, fontSize:".82rem", padding:"10px 18px"}}>
+          <p style={{fontSize:".94rem", color:"var(--text-secondary)", lineHeight:1.6}}>Email us to request a quote or submit an RFQ. Quotes are returned within 1–2 business days. GPC and micro-purchases are welcome.</p>
+          <a className="btn btn-primary" href={CAPSTAT_URL} target="_blank" rel="noopener" style={{marginTop:12, fontSize:".88rem", padding:"10px 17px"}}>
             <IconDownload /> Download Capability Statement
           </a>
         </DataCard>
         <DataCard title="Service Area">
-          <p style={{fontSize:".88rem", color:"var(--text-secondary)", lineHeight:1.65}}>Florida &amp; Southeast United States.</p>
-          <p style={{fontSize:".82rem", color:"var(--text-light)", marginTop:8}}>HQ: Homestead, FL — within 30 miles of major government installations in Miami-Dade and Broward counties.</p>
+          <p style={{fontSize:".94rem", color:"var(--text-secondary)", lineHeight:1.6}}>Florida-based, shipping nationwide.</p>
+          <p style={{fontSize:".89rem", color:"var(--text-light)", marginTop:8}}>Headquarters: Homestead, FL — within 30 miles of major government installations in Miami-Dade and Broward county.</p>
         </DataCard>
       </div>
     </Section>
 
-    <Section id="contact" label="Get Started" title="Contact Us" desc="Ready to discuss your requirements? We respond to all inquiries within one business day.">
+    <Section id="contact" label="Get Started" title="Contact Us" desc="Ready to discuss your requirements? We respond to inquiries within one business day.">
       <div className="contact-grid">
         <div><ContactInfo /></div>
         <ContactForm onSubmit={() => toast("Opening your email app…")} />

@@ -8,7 +8,7 @@ function ContactInfo() {
         </div>
         <div className="contact-row">
           <div className="contact-icon"><IconMail /></div>
-          <div><h4>Email</h4><a href="mailto:sagn.llc.1@gmail.com">sagn.llc.1@gmail.com</a></div>
+          <div><h4>Email</h4><a href="mailto:Joanne@sagnllc.com">Joanne@sagnllc.com</a></div>
         </div>
         <div className="contact-row">
           <div className="contact-icon"><IconPin /></div>
@@ -17,7 +17,7 @@ function ContactInfo() {
       </div>
       <div className="teaming-box">
         <h4>Teaming Opportunities</h4>
-        <p>SAGN LLC is available as a woman-owned small business subcontractor for supply chain support, commodity procurement, vendor sourcing, and facility service coordination. We also seek mentor-protégé partnerships with established primes.</p>
+        <p>SAGN LLC is available as a woman-owned small business subcontractor for supply chain support, commodity procurement, and vendor sourcing. We also seek mentor-protégé partnerships with established primes.</p>
       </div>
     </>
   );
@@ -26,7 +26,7 @@ window.ContactInfo = ContactInfo;
 
 function ContactForm({ onSubmit }) {
   // OPTIONAL FREE UPGRADE — no paid email needed:
-  // 1. Go to formspree.io, sign up free, create a form (sends to sagn.llc.1@gmail.com).
+  // 1. Go to formspree.io, sign up free, create a form (sends to Joanne@sagnllc.com).
   // 2. Paste the form's endpoint below (looks like https://formspree.io/f/abcdwxyz).
   // Until then, the form opens the visitor's email app pre-addressed to you.
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xzdqlrpg"; // active
@@ -41,7 +41,7 @@ function ContactForm({ onSubmit }) {
       `Email: ${state.email}\n` +
       `Phone: ${state.phone || "\u2014"}\n\n` +
       `${state.message}`;
-    const mailto = `mailto:sagn.llc.1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailto = `mailto:Joanne@sagnllc.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     // Anchor-click is more reliable than setting location.href across browsers.
     const a = document.createElement("a");
     a.href = mailto;
@@ -73,17 +73,17 @@ function ContactForm({ onSubmit }) {
       <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
         <h3>Message Sent</h3>
         {state.via === "form" ? (
-          <p style={{fontSize:".95rem", color:"var(--text-secondary)", lineHeight:1.65}}>
+          <p style={{fontSize:"1rem", color:"var(--text-secondary)", lineHeight:1.65}}>
             Thank you &mdash; your message has been delivered to <strong>SAGN LLC</strong>. We respond to all inquiries within one business day.
           </p>
         ) : (
-          <p style={{fontSize:".95rem", color:"var(--text-secondary)", lineHeight:1.65}}>
+          <p style={{fontSize:"1rem", color:"var(--text-secondary)", lineHeight:1.65}}>
             Your email app should have opened with your message ready to send to
-            <strong> sagn.llc.1@gmail.com</strong>. Just press send and we&rsquo;ll reply within one business day.
+            <strong> Joanne@sagnllc.com</strong>. Just press send and we&rsquo;ll reply within one business day.
           </p>
         )}
-        <p style={{fontSize:".88rem", color:"var(--text-light)", lineHeight:1.6, marginTop:12}}>
-          Prefer to reach us directly? Email <a href="mailto:sagn.llc.1@gmail.com" style={{color:"var(--blue)", fontWeight:600}}>sagn.llc.1@gmail.com</a> or call (954) 494-3137.
+        <p style={{fontSize:".94rem", color:"var(--text-light)", lineHeight:1.6, marginTop:12}}>
+          Prefer to reach us directly? Call (954) 494-3137.
         </p>
         <button className="btn-submit" style={{marginTop:20}} onClick={() => setState({ name:"", email:"", phone:"", message:"", sent:false })}>
           Write another message
@@ -99,7 +99,6 @@ function ContactForm({ onSubmit }) {
       <div className="form-group"><label>Phone (optional)</label><input name="phone" type="tel" value={state.phone} onChange={set("phone")} placeholder="(xxx) xxx-xxxx" /></div>
       <div className="form-group"><label>Message *</label><textarea name="message" required value={state.message} onChange={set("message")} placeholder="Tell us about your requirements…" /></div>
       <button className="btn-submit" type="submit" disabled={state.sending}>{state.sending ? "Sending…" : "Send Message"}</button>
-      <p style={{fontSize:".8rem", color:"var(--text-light)", textAlign:"center", marginTop:10, lineHeight:1.5}}>Prefer to write directly? <a href="mailto:sagn.llc.1@gmail.com" style={{color:"var(--blue)", fontWeight:600}}>sagn.llc.1@gmail.com</a></p>
     </form>
   );
 }
